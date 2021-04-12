@@ -204,11 +204,11 @@ function FindProxyForURL(url, host) {
                 "start": "141.142.193.89",
                 "netmask": "255.255.255.255"
         },
-        {
-                "name": "ncsa internal",
-                "start": "141.142.192.200",
-                "netmask": "255.255.255.255"
-        },
+//        {
+//                "name": "ncsa internal",
+//                "start": "141.142.192.200",
+//                "netmask": "255.255.255.255"
+//        },
         {
                 "name": "ncsa internal-test",
                 "start": "141.142.192.137",
