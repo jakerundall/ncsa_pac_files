@@ -160,6 +160,16 @@ function FindProxyForURL(url, host) {
                 "netmask": "255.255.255.224"
         },
         {
+                "name": "mg facilities net",
+                "start": "172.28.16.0",
+                "netmask": "255.255.255.224"
+        },
+        {
+                "name": "Radiant facilities net",
+                "start": "172.28.16.32",
+                "netmask": "255.255.255.224"
+        },
+        {
                 "name": "ncsa netdot",
                 "start": "141.142.141.136",
                 "netmask": "255.255.255.255"
