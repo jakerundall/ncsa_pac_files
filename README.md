@@ -1,6 +1,6 @@
 # ncsa_pac_files
 
-Can be easily loaded/reloaded with a script like this:
+On macOS, this can be easily loaded/reloaded with a script like this:
 ```
 #!/usr/bin/env bash
 set -x  # echo on
