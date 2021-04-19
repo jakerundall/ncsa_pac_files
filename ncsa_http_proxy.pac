@@ -102,6 +102,8 @@ function FindProxyForURL(url, host) {
 	return cerberus_bastion_proxy;
     if ( host == "mgrscontest.ncsa.illinois.edu" )
 	return cerberus_bastion_proxy;
+    if ( host == "viewalert02.techservices.illinois.edu" )
+	return cerberus_bastion_proxy;
 
     var cerberus_bastion_subnets = [
 	{
