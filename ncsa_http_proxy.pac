@@ -107,24 +107,9 @@ function FindProxyForURL(url, host) {
 
     var cerberus_bastion_subnets = [
 	{
-		"name": "mgrs",
-		"start": "141.142.161.134",
-		"netmask": "255.255.255.255"
-	},
-	{
-		"name": "mgrscon",
-		"start": "141.142.161.135",
-		"netmask": "255.255.255.255"
-	},
-	{
-		"name": "mgrstest",
-		"start": "141.142.161.136",
-		"netmask": "255.255.255.255"
-	},
-	{
-		"name": "mgrscontest",
-		"start": "141.142.161.137",
-		"netmask": "255.255.255.255"
+		"name": "DCL Datacenter network for TS Nagios monitoring service",
+		"start": "192.17.18.64",
+		"netmask": "255.255.255.240"
 	},
 	{
 		"name": "vsphere mgmt net esxi storage ipmi",
