@@ -63,6 +63,21 @@ function FindProxyForURL(url, host) {
                 return lsst_adm01_bastion_proxy;
     }
 
+    // FADM2 NPCF
+    var fadm2_bastion_proxy = "SOCKS 127.0.0.1:6111";
+    var fadm2_bastion_subnets = [
+        {
+                "name": "fadm2 xCAT-SVC ipmi",
+                "start": "172.31.4.0",
+                "netmask": "255.255.254.0"
+        },
+    ];
+    for (var i = 0; i < fadm2_bastion_subnets.length; i++)
+    {
+        if ( isInNet(host, fadm2_bastion_subnets[i].start, fadm2_bastion_subnets[i].netmask) )
+                return fadm2_bastion_proxy;
+    }
+
     // LSST-ADM-NCSA
     var lsst_adm_ncsa_bastion_proxy = "SOCKS 127.0.0.1:8086";
     var lsst_adm_ncsa_bastion_subnets = [
