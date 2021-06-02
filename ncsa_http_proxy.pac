@@ -366,57 +366,17 @@ function FindProxyForURL(url, host) {
 // 172.31.1.0/24 - VLAN ???? (IPMI)
 
     var mgadm_subnets = [
-        {
-                "name": "ache-services-net",
-                "start": "141.142.168.0",
-                "netmask": "255.255.255.192"
-        },
 	{
-		"name": "mforge-ipmi",
-		"start": "172.28.2.0",
-		"netmask": "255.255.255.192"
-	},
-	{
-		"name": "ache-ipmi",
-		"start": "172.28.2.64",
-		"netmask": "255.255.255.192"
-	},
-	{
-		"name": "ache-mforge-access",
-		"start": "172.28.2.128",
-		"netmask": "255.255.255.192"
-	},
-	{
-		"name": "ache-vmware-mgmt",
-		"start": "172.28.2.192",
-		"netmask": "255.255.255.192"
-	},
-	{
-		"name": "ache-neteng-safetynet",
-		"start": "172.28.3.0",
-		"netmask": "255.255.255.192"
-	},
-	{
-		"name": "ache-facilities-mgmt",
-		"start": "172.28.3.64",
-		"netmask": "255.255.255.192"
-	},
-	{
-		"name": "mforge-archive-data",
-		"start": "172.30.0.0",
-		"netmask": "255.255.255.192"
-	},
-	{
-		"name": "ache-vmware-vmotion",
-		"start": "172.30.0.64",
-		"netmask": "255.255.255.192"
+		"name": "mg-ipmi",
+		"start": "172.31.1.0",
+		"netmask": "255.255.255.0"
 	},
     ];
 
-    for (var i = 0; i < ache_bastion_subnets.length; i++)
+    for (var i = 0; i < mgadm_subnets.length; i++)
     {
-	if ( isInNet(host, ache_bastion_subnets[i].start, ache_bastion_subnets[i].netmask) )
-		return ache_bastion_proxy;
+	if ( isInNet(host, mgadm_subnets[i].start, mgadm_subnets[i].netmask) )
+		return mgadm_proxy;
     }
 
 
