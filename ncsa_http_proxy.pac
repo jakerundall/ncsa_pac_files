@@ -379,6 +379,42 @@ function FindProxyForURL(url, host) {
 		return mgadm_proxy;
     }
 
+    // ICCP
+    var cc_proxy = "SOCKS 127.0.0.1:8211";
+
+    var cc_subnets = [
+	{
+		"name": "iccp-ipmi-general",
+		"start": "10.10.0.0",
+		"netmask": "255.255.0.0"
+	},
+	{
+		"name": "iccp-ipmi-golub",
+		"start": "10.12.0.0",
+		"netmask": "255.255.0.0"
+	},
+	{
+		"name": "iccp-ipmi-10_60_31",
+		"start": "10.60.31.0",
+		"netmask": "255.255.255.0"
+	},
+	{
+		"name": "iccp-ipmi-10_60_32",
+		"start": "10.60.32.0",
+		"netmask": "255.255.255.0"
+	},
+    	{
+		"name": "iccp-ipmi-10_60_41",
+		"start": "10.60.41.0",
+		"netmask": "255.255.255.0"
+	},
+];
+
+    for (var i = 0; i < cc_subnets.length; i++)
+    {
+	if ( isInNet(host, cc_subnets[i].start, cc_subnets[i].netmask) )
+		return cc_proxy;
+    }
 
     // No match
     
