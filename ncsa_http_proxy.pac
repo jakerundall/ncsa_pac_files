@@ -4,7 +4,7 @@ function FindProxyForURL(url, host) {
 //    ssh -D 5111 lsst-adm01.ncsa.illinois.edu    ## LSST NPCF xCAT
 //    ssh -D 5112 cerberus{1-4}.ncsa.illinois.edu
 ////    ssh -D 5113 lsst-pup-npcf.ncsa.illinois.edu    ## LSST NPCF Puppet
-//    ssh -D 5114 lsst-adm01.ncsa.illinois.edu    ## LSST NCSA xCAT
+//    ssh -D 5114 lsst-adm-ncsa.ncsa.illinois.edu    ## LSST NCSA xCAT
 ////    ssh -D 6111 fadm2.ncsa.illinois.edu # actually c3 then ssh -4 -D 6111 fadm2
 //    ssh -D 7111 ...madm2... # but use ab1 instead
 //    ssh -D 7112 ab1
@@ -43,7 +43,7 @@ function FindProxyForURL(url, host) {
     }
 
     // LSST-ADM01 NPCF
-    var lsst_adm01_bastion_proxy = "SOCKS 127.0.0.1:5114";
+    var lsst_adm01_bastion_proxy = "SOCKS 127.0.0.1:5111";
     var lsst_adm01_bastion_subnets = [
         {
                 "name": "lsst npcf xCAT-SVC ipmi",
@@ -79,7 +79,7 @@ function FindProxyForURL(url, host) {
     }
 
     // LSST-ADM-NCSA
-    var lsst_adm_ncsa_bastion_proxy = "SOCKS 127.0.0.1:8086";
+    var lsst_adm_ncsa_bastion_proxy = "SOCKS 127.0.0.1:5114";
     var lsst_adm_ncsa_bastion_subnets = [
         {
                 "name": "lsst ncsa xCAT-SVC ipmi TEMPORARY",
