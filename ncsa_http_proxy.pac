@@ -321,6 +321,11 @@ function FindProxyForURL(url, host) {
 
     var ache_bastion_subnets = [
         {
+                "name": "ngale-ipmi",
+                "start": "172.28.28.0",
+                "netmask": "255.255.254.0"
+        },
+        {
                 "name": "ache-services-net",
                 "start": "141.142.168.0",
                 "netmask": "255.255.255.192"
