@@ -119,6 +119,14 @@ function FindProxyForURL(url, host) {
 	return cerberus_bastion_proxy;
     if ( host == "mgrscontest.ncsa.illinois.edu" )
 	return cerberus_bastion_proxy;
+    if ( host == "mgportal1.ncsa.illinois.edu" )
+	return cerberus_bastion_proxy;
+    if ( host == "mgportal.ncsa.illinois.edu" )
+	return cerberus_bastion_proxy;
+    if ( host == "mgportal2.ncsa.illinois.edu" )
+	return cerberus_bastion_proxy;
+    if ( host == "mgportaltest.ncsa.illinois.edu" )
+	return cerberus_bastion_proxy;
     if ( host == "viewalert02.techservices.illinois.edu" )
 	return cerberus_bastion_proxy;
 
