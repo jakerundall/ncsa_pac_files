@@ -9,6 +9,7 @@ function FindProxyForURL(url, host) {
 //    ssh -D 7111 ...madm2... # but use ab1 instead
 //    ssh -D 7112 ab1
 //    ssh -D 8111 mgadm.ncsa.illinois.edu
+//    ssh -D 8112 dt-prov02.delta.internal.ncsa.edu
 
 //  more from Bill Glick
 //    ssh -D 8082 bastion{1-2}.security.ncsa.illinois.edu
@@ -402,6 +403,24 @@ function FindProxyForURL(url, host) {
     {
 	if ( isInNet(host, mgadm_subnets[i].start, mgadm_subnets[i].netmask) )
 		return mgadm_proxy;
+    }
+
+    // Delta
+    var delta_proxy = "SOCKS 127.0.0.1:8112";
+// 172.28.24.0/23 - VLAN ???? (IPMI)
+
+    var delta_subnets = [
+	{
+		"name": "delta-ipmi",
+		"start": "172.28.24.0",
+		"netmask": "255.255.254.0"
+	},
+    ];
+
+    for (var i = 0; i < delta_subnets.length; i++)
+    {
+	if ( isInNet(host, delta_subnets[i].start, delta_subnets[i].netmask) )
+		return delta_proxy;
     }
 
     // ICCP
