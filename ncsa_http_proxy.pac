@@ -312,6 +312,11 @@ function FindProxyForURL(url, host) {
                 "start": "141.142.192.195",
                 "netmask": "255.255.255.255"
         },
+        {
+                "name": "asd prov",
+                "start": "172.28.18.0",
+                "netmask": "255.255.255.0"
+        },
     ];
 
     for (var i = 0; i < cerberus_bastion_subnets.length; i++)
