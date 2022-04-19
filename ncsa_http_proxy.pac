@@ -428,6 +428,23 @@ function FindProxyForURL(url, host) {
 		return delta_proxy;
     }
 
+    // Holl-I
+    var holli_proxy = "SOCKS 127.0.0.1:8113";
+
+    var holli_subnets = [
+	{
+		"name": "holli-ipmi",
+		"start": "172.28.40.0",
+		"netmask": "255.255.255.192"
+	},
+    ];
+
+    for (var i = 0; i < holli_subnets.length; i++)
+    {
+	if ( isInNet(host, holli_subnets[i].start, holli_subnets[i].netmask) )
+		return holli_proxy;
+    }
+
     // ICCP
     var cc_proxy = "SOCKS 127.0.0.1:8211";
 
