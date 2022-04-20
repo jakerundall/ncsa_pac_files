@@ -429,7 +429,7 @@ function FindProxyForURL(url, host) {
     }
 
     // Holl-I
-    var holli_proxy = "SOCKS 127.0.0.1:8113";
+    var holli_proxy = "SOCKS 127.0.0.1:8118";
 
     var holli_subnets = [
 	{
