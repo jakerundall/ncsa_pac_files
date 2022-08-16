@@ -274,6 +274,11 @@ function FindProxyForURL(url, host) {
                 "netmask": "255.255.255.255"
         },
         {
+                "name": "cmdb.ncsa",
+                "start": "141.142.192.133",
+                "netmask": "255.255.255.255"
+        },
+        {
                 "name": "ncsa cmdb",
                 "start": "141.142.192.26",
                 "netmask": "255.255.255.255"
