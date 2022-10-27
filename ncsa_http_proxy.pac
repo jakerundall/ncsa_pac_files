@@ -10,6 +10,7 @@ function FindProxyForURL(url, host) {
 //    ssh -D 7112 ab1
 //    ssh -D 8111 mgadm.ncsa.illinois.edu
 //    ssh -D 8112 dt-prov02.delta.internal.ncsa.edu
+//    ssh -D 8113 mg-adm01.internal.ncsa.edu
 
 //  more from Bill Glick
 //    ssh -D 8082 bastion{1-2}.security.ncsa.illinois.edu
@@ -486,6 +487,28 @@ function FindProxyForURL(url, host) {
     {
 	if ( isInNet(host, cc_subnets[i].start, cc_subnets[i].netmask) )
 		return cc_proxy;
+    }
+
+    // Magnus (new)
+    var mgadm01_proxy = "SOCKS 127.0.0.1:8113";
+
+    var mgadm01_subnets = [
+        {
+                "name": "mg-ipmi",
+                "start": "172.29.15.0",
+                "netmask": "255.255.255.0"
+        },
+        {
+                "name": "mg-facilities",
+                "start": "172.28.16.160",
+                "netmask": "255.255.255.224"
+        },
+    ];
+
+    for (var i = 0; i < mgadm01_subnets.length; i++)
+    {
+        if ( isInNet(host, mgadm01_subnets[i].start, mgadm01_subnets[i].netmask) )
+                return mgadm01_proxy;
     }
 
     // No match
