@@ -264,11 +264,11 @@ function FindProxyForURL(url, host) {
                 "start": "141.142.192.155",
                 "netmask": "255.255.255.255"
         },
-//        {
-//                "name": "ncsa identity",
-//                "start": "141.142.193.68",
-//                "netmask": "255.255.255.255"
-//        },
+        {
+                "name": "ncsa identity",
+                "start": "141.142.193.68",
+                "netmask": "255.255.255.255"
+        },
         {
                 "name": "ncsa events",
                 "start": "141.142.192.92",
