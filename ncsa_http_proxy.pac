@@ -133,6 +133,8 @@ function FindProxyForURL(url, host) {
 	return cerberus_bastion_proxy;
     if ( host == "openondemand.delta.ncsa.illinois.edu" )
 	return cerberus_bastion_proxy;
+    if ( host == "vcenter.internal.ncsa.edu" )
+        return cerberus_bastion_proxy;
     var cerberus_bastion_subnets = [
 	{
 		"name": "DCL Datacenter network for TS Nagios monitoring service",
