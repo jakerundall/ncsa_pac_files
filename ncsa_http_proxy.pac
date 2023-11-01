@@ -317,6 +317,11 @@ function FindProxyForURL(url, host) {
                 "netmask": "255.255.255.255"
         },
         {
+                "name": "ncsa wiki",
+                "start": "141.142.192.52",
+                "netmask": "255.255.255.255"
+        },
+        {
                 "name": "ncsa jira-test",
                 "start": "141.142.192.195",
                 "netmask": "255.255.255.255"
