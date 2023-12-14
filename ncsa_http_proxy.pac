@@ -331,6 +331,11 @@ function FindProxyForURL(url, host) {
                 "start": "172.28.18.0",
                 "netmask": "255.255.255.0"
         },
+        {
+                "name": "ICCP VMware Mgmt Net",
+                "start": "172.29.9.64",
+                "netmask": "255.255.255.192"
+        },
     ];
 
     for (var i = 0; i < cerberus_bastion_subnets.length; i++)
