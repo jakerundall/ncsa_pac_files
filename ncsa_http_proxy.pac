@@ -464,6 +464,11 @@ function FindProxyForURL(url, host) {
 		return holli_proxy;
     }
 
+    var hli_login01_proxy = "SOCKS 127.0.0.1:8119";
+
+    if ( host == "grafana.hli-ncsa-wsc.cerebrassc.local")
+        return hli_login01_proxy;
+
     // ICCP
     var cc_proxy = "SOCKS 127.0.0.1:8211";
 
