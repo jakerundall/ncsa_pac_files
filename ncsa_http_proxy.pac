@@ -469,6 +469,20 @@ function FindProxyForURL(url, host) {
     if ( host == "grafana.hli-ncsa-wsc.cerebrassc.local")
         return hli_login01_proxy;
 
+    var holli_login01_subnets = [
+        {
+                "name": "holli-appliance-production",
+                "start": "172.29.23.0",
+                "netmask": "255.255.255.0"
+        },
+    ];  
+
+    for (var i = 0; i < holli_login01_subnets.length; i++)
+    {           
+        if ( isInNet(host, holli_login01_subnets[i].start, holli_login01_subnets[i].netmask) )
+                return holli_login01_proxy;
+    }           
+
     // ICCP
     var cc_proxy = "SOCKS 127.0.0.1:8211";
 
