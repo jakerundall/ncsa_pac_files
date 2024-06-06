@@ -131,8 +131,6 @@ function FindProxyForURL(url, host) {
 	return cerberus_bastion_proxy;
     if ( host == "viewalert02.techservices.illinois.edu" )
 	return cerberus_bastion_proxy;
-    if ( host == "openondemand.delta.ncsa.illinois.edu" )
-	return cerberus_bastion_proxy;
     if ( host == "dt-jenkins.delta.ncsa.illinois.edu" )
         return cerberus_bastion_proxy;
     if ( host == "vcenter.internal.ncsa.edu" )
