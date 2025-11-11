@@ -167,6 +167,8 @@ function FindProxyForURL(url, host) {
         return cerberus_bastion_proxy;
     if ( host == "mg-pve3.internal.ncsa.edu" )
         return cerberus_bastion_proxy;
+    if ( host == "netbox.ncsa.illinois.edu" )
+        return cerberus_bastion_proxy;
     var cerberus_bastion_subnets = [
 	{
 		"name": "DCL Datacenter network for TS Nagios monitoring service",
