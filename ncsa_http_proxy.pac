@@ -109,6 +109,9 @@ function FindProxyForURL(url, host) {
     // Cerberus
     var cerberus_bastion_proxy = "SOCKS5 127.0.0.1:5112;SOCKS 127.0.0.1:5112";
 
+    if ( host == "isf-npcf-pve01.internal.ncsa.edu" ||
+         host == "isf-npcf-pve02.internal.ncsa.edu" )
+        return cerberus_bastion_proxy;
     if ( host == "ici-ansible.ncsa.illinois.edu" )
         return cerberus_bastion_proxy;
     if ( host == "mgblazetest.ncsa.illinois.edu" )
