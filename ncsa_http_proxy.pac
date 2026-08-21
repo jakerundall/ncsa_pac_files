@@ -111,6 +111,8 @@ function FindProxyForURL(url, host) {
 
     if ( host == "isf-npcf-pve01.internal.ncsa.edu" )
         return cerberus_bastion_proxy;
+    if ( host == "isf-npcf-pve02.internal.ncsa.edu" )
+        return cerberus_bastion_proxy;
     if ( host == "ici-ansible.ncsa.illinois.edu" )
         return cerberus_bastion_proxy;
     if ( host == "mgblazetest.ncsa.illinois.edu" )
