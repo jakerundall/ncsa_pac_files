@@ -129,6 +129,10 @@ function FindProxyForURL(url, host) {
         return cerberus_bastion_proxy;
     if ( host == "dt-pve4.delta.internal.ncsa.edu" )
         return cerberus_bastion_proxy;
+    if ( host == "dtnx-pve-01.delta.internal.ncsa.edu" )
+        return cerberus_bastion_proxy;
+    if ( host == "dtnx-pve-02.delta.internal.ncsa.edu" )
+        return cerberus_bastion_proxy;
     if ( host == "cc-hv01-vm.internal.ncsa.edu" )
         return cerberus_bastion_proxy;
     if ( host == "cc-hv02-vm.internal.ncsa.edu" )
