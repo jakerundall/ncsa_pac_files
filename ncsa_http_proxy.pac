@@ -496,6 +496,28 @@ function FindProxyForURL(url, host) {
 		return delta_proxy;
     }
 
+    // DeltaAI
+    var deltaai_proxy = "SOCKS 127.0.0.1:8223";
+
+    var deltaai_subnets = [
+        {
+                  "name": "deltaai-head-bmc",
+                  "start": "172.28.56.0",
+                  "netmask": "255.255.252.0"
+        },
+        {
+                  "name": "deltaai-hostctrl",
+                  "start": "172.28.61.0",
+                  "netmask": "255.255.255.0"
+        },
+    ];
+
+    for (var i = 0; i < deltaai_subnets.length; i++)
+    {
+        if (isInNet(host, deltaai_subnets[i].start, deltaai_subnets[i].netmask) )
+               return deltaai_proxy;
+    }
+
     // Holl-I
     var holli_proxy = "SOCKS 127.0.0.1:8118";
 
