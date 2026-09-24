@@ -11,6 +11,7 @@ function FindProxyForURL(url, host) {
 //    ssh -D 8111 mgadm.ncsa.illinois.edu
 //    ssh -D 8112 dt-prov02.delta.internal.ncsa.edu
 //    ssh -D 8113 mg-adm01.internal.ncsa.edu
+//    ssh -D 8223 dtai-prov02.delta.internal.ncsa.edu
 
 //  more from Bill Glick
 //    ssh -D 8082 bastion{1-2}.security.ncsa.illinois.edu
