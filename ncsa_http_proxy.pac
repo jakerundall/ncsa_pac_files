@@ -388,6 +388,26 @@ function FindProxyForURL(url, host) {
                 "start": "172.29.9.64",
                 "netmask": "255.255.255.192"
         },
+        {
+                "name": "dt-svc-llmaas01",
+                "start": "141.142.140.219",
+                "netmask": "255.255.255.255"
+        },
+        {
+                "name": "dt-svc-llmaas02",
+                "start": "141.142.140.224",
+                "netmask": "255.255.255.255"
+        },
+        {
+                "name": "dtai-svc-llmaas01",
+                "start": "141.142.140.222",
+                "netmask": "255.255.255.255"
+        },
+        {
+                "name": "dtai-svc-llmaas02",
+                "start": "141.142.140.225",
+                "netmask": "255.255.255.255"
+        },
     ];
 
     for (var i = 0; i < cerberus_bastion_subnets.length; i++)
