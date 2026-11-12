@@ -10,7 +10,8 @@ function FindProxyForURL(url, host) {
 //    ssh -D 7112 ab1
 //    ssh -D 8111 mgadm.ncsa.illinois.edu
 //    ssh -D 8112 dt-prov02.delta.internal.ncsa.edu
-//    ssh -D 8113 mg-adm01.internal.ncsa.edu
+//    ssh -D 8112 dt-prov02.delta.internal.ncsa.edu
+//    ssh -D 8115 dt-login04.delta.ncsa.illinois.edu
 //    ssh -D 8223 dtai-prov02.delta.internal.ncsa.edu
 
 //  more from Bill Glick
@@ -501,11 +502,11 @@ function FindProxyForURL(url, host) {
 		return mgadm_proxy;
     }
 
-    // Delta
-    var delta_proxy = "SOCKS 127.0.0.1:8112";
+    // Delta admin
+    var delta_admin_proxy = "SOCKS 127.0.0.1:8112";
 // 172.28.24.0/23 - VLAN ???? (IPMI)
 
-    var delta_subnets = [
+    var delta_admin_subnets = [
 	{
 		"name": "delta-ipmi",
 		"start": "172.28.24.0",
@@ -513,11 +514,29 @@ function FindProxyForURL(url, host) {
 	},
     ];
 
-    for (var i = 0; i < delta_subnets.length; i++)
+    for (var i = 0; i < delta_admin_subnets.length; i++)
     {
-	if ( isInNet(host, delta_subnets[i].start, delta_subnets[i].netmask) )
-		return delta_proxy;
+	if ( isInNet(host, delta_admin_subnets[i].start, delta_admin_subnets[i].netmask) )
+		return delta_admin_proxy;
     }
+
+    // Delta login
+    var delta_login_proxy = "SOCKS 127.0.0.1:8112";
+
+    if ( host == "dt-svc-llmaas01.delta.ncsa.illinois.edu" )
+        return delta_login_proxy;
+    if ( host == "dt-svc-llmaas02.delta.ncsa.illinois.edu" )
+        return delta_login_proxy;
+    if ( host == "dtai-svc-llmaas01.delta.ncsa.illinois.edu" )
+        return delta_login_proxy;
+    if ( host == "dtai-svc-llmaas02.delta.ncsa.illinois.edu" )
+        return delta_login_proxy;
+
+    for (var i = 0; i < delta_login_subnets.length; i++)
+    {   
+        if ( isInNet(host, delta_login_subnets[i].start, delta_login_subnets[i].netmask) )
+                return delta_login_proxy;
+    }           
 
     // DeltaAI
     var deltaai_proxy = "SOCKS 127.0.0.1:8223";
