@@ -520,23 +520,17 @@ function FindProxyForURL(url, host) {
 		return delta_admin_proxy;
     }
 
-    // Delta login
-    var delta_login_proxy = "SOCKS 127.0.0.1:8112";
-
-    if ( host == "dt-svc-llmaas01.delta.ncsa.illinois.edu" )
-        return delta_login_proxy;
-    if ( host == "dt-svc-llmaas02.delta.ncsa.illinois.edu" )
-        return delta_login_proxy;
-    if ( host == "dtai-svc-llmaas01.delta.ncsa.illinois.edu" )
-        return delta_login_proxy;
-    if ( host == "dtai-svc-llmaas02.delta.ncsa.illinois.edu" )
-        return delta_login_proxy;
-
-    for (var i = 0; i < delta_login_subnets.length; i++)
-    {   
-        if ( isInNet(host, delta_login_subnets[i].start, delta_login_subnets[i].netmask) )
-                return delta_login_proxy;
-    }           
+//    // Delta login
+//    var delta_login_proxy = "SOCKS 127.0.0.1:8112";
+//
+//    if ( host == "dt-svc-llmaas01.delta.ncsa.illinois.edu" )
+//        return delta_login_proxy;
+//    if ( host == "dt-svc-llmaas02.delta.ncsa.illinois.edu" )
+//        return delta_login_proxy;
+//    if ( host == "dtai-svc-llmaas01.delta.ncsa.illinois.edu" )
+//        return delta_login_proxy;
+//    if ( host == "dtai-svc-llmaas02.delta.ncsa.illinois.edu" )
+//        return delta_login_proxy;
 
     // DeltaAI
     var deltaai_proxy = "SOCKS 127.0.0.1:8223";
